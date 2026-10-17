@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Administracion - Marcador en vivo</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Marcador en vivo</h1>
+      <nav>
+        <a href="/">Partidos</a>
+        <a href="/admin.html" aria-current="page">Administracion</a>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <aside>
+        <h2>Partidos</h2>
+        <div id="match-list" class="match-list"></div>
+      </aside>
+
+      <section class="main-col">
+        <p id="placeholder" class="placeholder">Seleccione un partido para registrar eventos.</p>
+
+        <div id="panel" hidden>
+          <div class="detail-head">
+            <h2 id="match-title"></h2>
+            <span id="connection" class="connection connection-disconnected">Desconectado</span>
+          </div>
+          <div id="scoreboard" class="scoreboard"></div>
+
+          <form id="event-form" class="form" novalidate>
+            <h3>Registrar evento</h3>
+            <div class="grid">
+              <label>Tipo <select id="type" name="type"></select></label>
+              <label>
+                Equipo
+                <select id="team" name="team">
+                  <option value="home"></option>
+                  <option value="away"></option>
+                </select>
+              </label>
+              <label>Minuto <input id="minute" name="minute" type="number" min="0" max="130" required /></label>
+              <label>Jugador <input id="player" name="player" type="text" maxlength="80" /></label>
+              <label class="wide">Descripcion <input id="description" name="description" type="text" maxlength="200" /></label>
+            </div>
+            <div class="form-actions">
+              <button type="submit">Registrar evento</button>
+              <span id="feedback" class="feedback" role="status"></span>
+            </div>
+          </form>
+
+          <label class="status-select">
+            Estado del partido
+            <select id="status"></select>
+          </label>
+
+          <h3>Linea de tiempo</h3>
+          <ol id="timeline" class="timeline"></ol>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/js/admin.js"></script>
+  </body>
+</html>

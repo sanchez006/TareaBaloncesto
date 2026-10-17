@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Marcador en vivo</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Marcador en vivo</h1>
+      <nav>
+        <a href="/" aria-current="page">Partidos</a>
+        <a href="/admin.html">Administracion</a>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <aside>
+        <h2>Partidos</h2>
+        <div id="match-list" class="match-list"></div>
+      </aside>
+
+      <section class="main-col">
+        <p id="placeholder" class="placeholder">Seleccione un partido para ver el marcador y la linea de tiempo.</p>
+
+        <div id="detail" hidden>
+          <div class="detail-head">
+            <span id="venue" class="venue"></span>
+            <span id="connection" class="connection connection-disconnected">Desconectado</span>
+          </div>
+          <div id="scoreboard" class="scoreboard"></div>
+          <h2>Linea de tiempo</h2>
+          <ol id="timeline" class="timeline"></ol>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/js/public.js"></script>
+  </body>
+</html>
